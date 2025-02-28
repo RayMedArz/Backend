@@ -1,4 +1,2 @@
-const getIndex = (req,res)=> res.send("hola mundo con express");
-const getPing = (req,res)=> res.send("pong");
-
-export {getIndex,getPing};
+export const getIndex = (req, res) => res.send("Hola mundo desde API !!!!!");
+export const getPing = (req, res) => res.send("PONG");
