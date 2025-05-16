@@ -44,3 +44,29 @@ export const checkPassword = async (req, res) => {
 
   res.json({ isValid });
 };
+
+export const register = async (req, res) => {
+  const { email, password } = req.body;
+
+  // Verificar si el usuario ya existe
+  const existingUsers = await db.collection("Users").where("email", "==", email).get();
+  if (!existingUsers.empty) {
+    return res.status(400).json({ msg: "User already exists" });
+  }
+
+  // Hashear la contraseña
+  const { salt, hash } = encryptPassword(password);
+
+  // Crear el nuevo usuario
+  const newUser = {
+    email,
+    salt,
+    password: hash, // Guardar el hash de la contraseña
+    createdAt: new Date().toISOString(),
+  };
+
+  // Guardar el usuario en la base de datos
+  await db.collection("Users").add(newUser);
+
+  res.status(201).json({ msg: "User registered successfully" });
+};
