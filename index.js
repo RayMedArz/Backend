@@ -10,7 +10,7 @@ import morgan from "morgan";
 
 const app=express();
 
-connectDB();
+//connectDB();
 
 app.use(cors());
 app.use(morgan("dev"));
