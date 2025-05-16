@@ -3,8 +3,6 @@ import "dotenv/config.js";
 import express from 'express';
 import cors from "cors";   
 import indexRoutes from "./routes/indexRoutes.js";
-//import itemsRoutes from "./routes/items.Routes.js";
-import itemsRoutes2 from "./routes/items2.Routes.js";
 import itemsRoutes3 from "./routes/items3.routes.js";
 import loginRoutes from "./routes/login.Routes.js";
 import morgan from "morgan";
