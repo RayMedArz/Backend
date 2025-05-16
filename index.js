@@ -6,7 +6,7 @@ import indexRoutes from "./routes/indexRoutes.js";
 import itemsRoutes3 from "./routes/items3.routes.js";
 import loginRoutes from "./routes/login.Routes.js";
 import morgan from "morgan";
-import { connectDB } from "./utils/mongodb.js";
+
 
 const app=express();
 
