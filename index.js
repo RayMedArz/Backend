@@ -22,4 +22,5 @@ app.use(indexRoutes);
 app.use(itemsRoutes3);
 app.use(loginRoutes);
 
-app.listen(50000, console.log("http://localhost:50000"));
+const PORT = process.env.PORT;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
